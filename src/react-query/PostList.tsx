@@ -3,7 +3,7 @@ import usePosts from "./hooks/usePosts";
 
 const PostList = () => {
   // const [userId, setUserId] = useState<number>();
-  const pageSize = 10;
+  const pageSize = 11;
   const [page, setPage] = useState(1);
   const {
     data: posts,
