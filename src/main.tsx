@@ -6,7 +6,8 @@ import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
-//   {
+
+// const queryClient = new QueryClient({
 //   defaultOptions: {
 //     queries: {
 //       retry: 1,
@@ -17,7 +18,7 @@ const queryClient = new QueryClient();
 //       refetchOnReconnect: false,
 //     },
 //   },
-// }
+// });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

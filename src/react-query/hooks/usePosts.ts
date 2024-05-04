@@ -18,7 +18,7 @@ const usePosts = (query: PostQuery) =>
     queryKey: ["posts", query],
     queryFn: () =>
       axios
-        .get("https://jsonplaceholder.typicode.com/posts", {
+        .get<Post[]>("https://jsonplaceholder.typicode.com/posts", {
           params: {
             _start: (query.page - 1) * query.pageSize,
             _limit: query.pageSize,
@@ -27,4 +27,5 @@ const usePosts = (query: PostQuery) =>
         .then((res) => res.data),
     staleTime: 1 * 60 * 1000,
   });
+
 export default usePosts;
