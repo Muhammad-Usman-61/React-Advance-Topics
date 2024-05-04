@@ -3,7 +3,7 @@ import usePosts from "./hooks/usePosts";
 
 const PostList = () => {
   // const [userId, setUserId] = useState<number>();
-  const pageSize = 11;
+  const pageSize = 10;
   const [page, setPage] = useState(1);
   const {
     data: posts,
@@ -34,15 +34,28 @@ const PostList = () => {
 
       <ul className="list-group">
         {posts?.map((post) => (
-          <li key={post.id} className="list-none">
+          <li key={post.id} className="list-none p-4 mb-4 border">
             {post.title}
           </li>
         ))}
       </ul>
-      <button disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>
+      <button
+        disabled={page === 1}
+        onClick={() => setPage((prev) => prev - 1)}
+        className={
+          page === 1
+            ? "bg-gray-300 text-white px-4 py-2 rounded mr-2 cursor-not-allowed"
+            : "bg-blue-600 text-white px-4 py-2 rounded mr-2"
+        }
+      >
         Previous
       </button>
-      <button onClick={() => setPage((prev) => prev + 1)}>Next</button>
+      <button
+        onClick={() => setPage((prev) => prev + 1)}
+        className="bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Next
+      </button>
     </>
   );
 };
